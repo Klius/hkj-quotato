@@ -119,19 +119,18 @@ function update_hud(){
 }
 
 function check_game_state(){
-    if (GAME_STATE === 0){
-        if (TRIES >= MAX_TRIES){
-            // game over
-            alert("Game Over")
-            document.forms["guess_form"]["guess"].disabled = true
-            GAME_STATE = 1
-        }
-        if (QUOTE_INFO[0] === quote_p.innerText){
-            // guessed quote
-            alert("You did it, great job!")
-            document.forms["guess_form"]["guess"].disabled = true
-            GAME_STATE = 2
-        }
+    if ((GAME_STATE === 0) && (TRIES >= MAX_TRIES)){
+        // game over
+        alert("Game Over")
+        quote_p.innerText = QUOTE_INFO[0]
+        document.forms["guess_form"]["guess"].disabled = true
+        GAME_STATE = 1
+    }
+    if ((GAME_STATE === 0) && (QUOTE_INFO[0] === quote_p.innerText)){
+        // guessed quote
+        alert("You did it, great job!")
+        document.forms["guess_form"]["guess"].disabled = true
+        GAME_STATE = 2
     }
 }
 
