@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HKJ quotes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <span id="tries">Tries x of x</span>
+    <div>
+        <span id="quote">
+        </span><span id="who"></span>
+    </div>
+    <P id="quote_info"></P>
+    <form id="guess_form" name="guess_form" onsubmit="return validate_input(event)">
+        <input name="guess" type="text" minlength="1" maxlength="1" size="1">
+    </form>
+    <p id="guessed">Guesses:</p>
+    <p>
+        <span>Quote for Day: </span> <input id="date" type="date" onchange="update_date(event)">
+    </p>
+</body>
+<script src="quotato.js"></script>
+
+</html>
